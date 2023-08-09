@@ -1,0 +1,22 @@
+import time
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+serv_obj = Service("/snap/chromium/2565/usr/lib/chromium-browser/chromedriver")
+driver = webdriver.Chrome(service=serv_obj)
+driver.get('https://selectorshub.com/xpath-practice-page/')
+driver.maximize_window()
+time.sleep(2)
+driver.find_element('id', 'userId').send_keys('saira@gmail.com')
+time.sleep(1)
+driver.find_element('id', 'pass').send_keys('saira1234')
+time.sleep(1)
+driver.find_element('name', 'company').send_keys('Aleh.tech')
+time.sleep(1)
+driver.find_element('name', 'mobile number').send_keys('03214234657')
+time.sleep(1)
+driver.find_element('xpath', '//input[@value="Submit"]').click()
+time.sleep(1)
+driver.find_element('id', 'inp_val').send_keys('Nope')
+time.sleep(1)
+driver.find_elemen_by_class_name('nameFld').send_keys('saira')
+time.sleep(2)
